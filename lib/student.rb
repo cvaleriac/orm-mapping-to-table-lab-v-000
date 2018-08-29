@@ -19,8 +19,8 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def drop_table
-    SELECT students FROM sqlite_master WHERE type='table' AND students ='students'
-    DB[:conn].execute(students_check_sql)
+  def self.drop_table
+    sql = "DROP TABLE IF EXISTS students"
+    DB[:conn].execute(sql)
   end
 end
